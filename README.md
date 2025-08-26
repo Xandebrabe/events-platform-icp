@@ -1,5 +1,7 @@
 # meet-platform-icp
 
+![MeeT Logo](./assets/meet_event_platform.png)
+
 ## Meet is a platform developed for icp hackaton.
 
 ## Overview
