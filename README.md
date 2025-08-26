@@ -1,2 +1,3 @@
-# events-platform-icp
-A events platform develop for icp
+# meet-platform-icp
+
+Meet is a platform developed for icp hackaton
