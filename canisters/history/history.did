@@ -1,0 +1,15 @@
+type Balance = record { user: principal; net: int64 };
+type Transfer = record { from: principal; to: principal; amount: nat64 };
+type Snapshot = record {
+  id: nat;
+  groupId: nat;
+  balances: vec Balance;
+  settlements: vec Transfer;
+  createdAt: nat64;
+};
+
+service : {
+  save_snapshot: (Snapshot) -> (Snapshot);
+  list_snapshots: (nat) -> (vec Snapshot);
+  get_snapshot: (nat) -> (opt Snapshot);
+}

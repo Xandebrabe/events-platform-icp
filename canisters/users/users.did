@@ -1,0 +1,10 @@
+type User = record { id: principal; name: text };
+type Group = record { id: nat; name: text; members: vec principal };
+
+service : {
+  register_user: (text) -> (User);
+  get_me: () -> (opt User);
+  create_group: (text, vec principal) -> (Group);
+  list_groups: () -> (vec Group);
+  list_users: () -> (vec User);
+}

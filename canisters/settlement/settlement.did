@@ -1,0 +1,25 @@
+type Balance = record { user: principal; net: int64 };
+type Transfer = record { from: principal; to: principal; amount: nat64 };
+type Expense = record {
+  id: nat;
+  groupId: nat;
+  payer: principal;
+  amount: nat64;
+  desc: text;
+  participants: vec principal;
+  createdAt: nat64;
+};
+type Snapshot = record {
+  id: nat;
+  groupId: nat;
+  balances: vec Balance;
+  settlements: vec Transfer;
+  createdAt: nat64;
+};
+
+service : {
+  compute_balances: (nat) -> (vec Balance);
+  suggest_settlements: (nat) -> (vec Transfer);
+  simulate_with_extra: (nat, Expense) -> (vec Balance);
+  snapshot_and_persist: (nat) -> (Snapshot);
+}

@@ -1,0 +1,15 @@
+type Expense = record {
+  id: nat;
+  groupId: nat;
+  payer: principal;
+  amount: nat64;
+  desc: text;
+  participants: vec principal;
+  createdAt: nat64;
+};
+
+service : {
+  add_expense: (nat, nat64, text, principal, vec principal) -> (Expense);
+  list_expenses: (nat) -> (vec Expense);
+  remove_expense: (nat) -> (bool);
+}
