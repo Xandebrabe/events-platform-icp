@@ -58,7 +58,7 @@ Foster trust and transparency in how events are organized.
 
 Enable new economies, where tickets, rewards, and collectibles retain value beyond the event itself.
 
-Roadmap
+## Roadmap
 
 MVP: Token-gated event creation + wallet login + basic ticketing.
 
@@ -67,3 +67,45 @@ Phase 2: Proof-of-attendance NFTs, community airdrops, and gamified engagement.
 Phase 3: DAO governance tools, reputation systems, and cross-ecosystem partnerships.
 
 Long Term: Become the Web3 standard for digital & physical event infrastructure.
+
+## Architecture
+
+M33T is designed as a modular three-layer architecture:
+
+Frontend Layer (User Experience):
+
+Built with Next.js + TailwindCSS for a responsive and modern interface.
+
+Wallet connection and transaction handling via Web3.js / ICP agent SDK.
+
+Dynamic event pages, token-gated entry validation, and real-time updates.
+
+Application Layer (Smart Contracts & Logic):
+
+Event creation, ticket issuance, and POAPs run on ICP canisters (smart contracts).
+
+Anchor framework (Solana) integration for token logic and staking pools.
+
+DAO-based governance using SNS (Service Nervous System) modules on ICP.
+
+Infrastructure Layer (Storage & Data):
+
+Event metadata, images, and files stored via ICP canister storage or IPFS for decentralization.
+
+Transaction data indexed in ClickHouse or Postgres for analytics dashboards.
+
+## Tech Stack
+
+Frontend: Next.js 14, TailwindCSS, React Context for state, ICP Agent JS SDK.
+
+Smart Contracts: ICP Canisters (Motoko/Rust), Anchor (Solana) for tokenomics.
+
+Wallets: Circle Wallet, Phantom, MetaMask (via multi-chain bridging).
+
+Liquidity: LI.FI SDK, Meteora DammV2 pools.
+
+Database/Analytics: ClickHouse (real-time queries), PostgreSQL (relational ops).
+
+File Storage: IPFS + ICP canisters for event data, optional AWS S3 for hybrid.
+
+Deployment: Dockerized microservices + ICP canisters for scaling.
